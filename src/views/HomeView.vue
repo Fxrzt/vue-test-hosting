@@ -3,9 +3,6 @@
     <NavbarMenu></NavbarMenu>
     <div class="grid grid-cols-4 gap-4 py-2">
       <img src="../img/Beagle Puppies.jpg" class="w-20 h-30">
-      <img :src="ImageBeaglePuppy" class="w-20 h-30">
-      <img :src="ImageBeaglePuppy" class="w-20 h-30">
-      <img :src="ImageBeaglePuppy" class="w-20 h-30">
     </div>
   </div>
 </template>
@@ -18,7 +15,8 @@ export default {
   name: 'HomeView',
   data () {
     return {
-      ImageBeaglePuppy: process.env.IMAGE_BEAGLE_PUPPY
+      ImageBeaglePuppy: process.env.IMAGE_BEAGLE_PUPPY,
+      url_image: []
     }
   },
   components: {

@@ -1,18 +1,28 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NavbarMenu></NavbarMenu>
+    <div class="grid grid-cols-4 gap-4 py-2">
+      <img :src="process.env.IMAGE_BEAGLE_PUPPY" class="w-20 h-30">
+      <img :src="ImageBeaglePuppy" class="w-20 h-30">
+      <img :src="ImageBeaglePuppy" class="w-20 h-30">
+      <img :src="ImageBeaglePuppy" class="w-20 h-30">
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import NavbarMenu from '../components/NavbarMenu.vue'
 
 export default {
   name: 'HomeView',
+  data () {
+    return {
+      ImageBeaglePuppy: process.env.IMAGE_BEAGLE_PUPPY
+    }
+  },
   components: {
-    HelloWorld
+    NavbarMenu
   }
 }
 </script>

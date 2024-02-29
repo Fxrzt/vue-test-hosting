@@ -15,10 +15,11 @@
         >
           <li v-for="(item, index) in menubar" :key="index">
             <a
-              v-if="index == 0"
+              v-if="index == 4"
               @click="fn_getName"
               href="/"
-              class="topic_text_TH block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-orange-500 md:p-0"
+              class="topic_text_TH block z-1 py-1.5 px-4 text-white bg-orange-500 rounded md:text-white hover:text-white hover:bg-transparent"
+              style="border: 2px solid #fff;"
               aria-current="page"
               >{{ item.name }}</a
             >
@@ -26,7 +27,7 @@
               v-else
               @click="fn_getName"
               :href="item.name_path"
-              class="topic_text_TH block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-500 md:p-0"
+              class="topic_text_TH nav_item block z-0 py-2 px-1 text-white rounded hover:bg-gray-100 hover:bg-transparent "
               >{{ item.name }}</a
             >
           </li>
@@ -49,19 +50,19 @@ export default {
           name_path: '/'
         },
         {
-          name: 'Service',
+          name: 'Skills',
           name_path: '/service'
         },
         {
-          name: 'About',
+          name: 'Work Experience',
           name_path: '/about'
         },
         {
-          name: 'Calculate',
+          name: 'Contact Me',
           name_path: '/calculate'
         },
         {
-          name: 'Valentine',
+          name: 'Hire Me',
           name_path: '/valentine'
         }
       ]
@@ -79,5 +80,26 @@ export default {
 .topic_text_TH {
   font-weight: 500;
   font-size: 23px;
+}
+.nav_item{
+  cursor: pointer;
+  position: relative;
+}
+.nav_item::before {
+  content: " ";
+  width: 2rem;
+  height: 0.2rem;
+  background: linear-gradient(90deg, #a993fe 0%, #f97316 100%);
+  border-radius: 0.5rem;
+  position: absolute;
+  bottom: -0.6rem;
+  opacity: 0;
+  transform: translateX(-1.5rem);
+  transition: all 0.3s ease;
+}
+.nav_item:hover::before{
+  width: 100%;
+  transform: translateX(-0.25rem);
+  opacity: 1;
 }
 </style>

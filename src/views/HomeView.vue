@@ -1,12 +1,11 @@
 <template>
   <div class="home">
-    <NavbarMenu></NavbarMenu>
+    <h3>Home View</h3>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import NavbarMenu from '../components/NavbarMenu.vue'
 
 export default {
   name: 'HomeView',
@@ -18,7 +17,6 @@ export default {
     }
   },
   components: {
-    NavbarMenu
   },
   methods: {
     fn_getConsoleLog () {

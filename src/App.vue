@@ -1,8 +1,22 @@
 <template>
   <div id="app">
+    <NavbarMenu></NavbarMenu>
     <router-view/>
+    <CopyRight></CopyRight>
   </div>
 </template>
+
+<script>
+import NavbarMenu from './components/NavbarMenu.vue'
+import CopyRight from './components/CopyRight.vue'
+
+export default {
+  components: {
+    NavbarMenu,
+    CopyRight
+  }
+}
+</script>
 
 <style>
 #app {

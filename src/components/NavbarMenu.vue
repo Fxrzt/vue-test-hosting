@@ -5,20 +5,20 @@
     >
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
         <span
-          class="sty_logo self-center text-2xl font-semibold whitespace-nowrap text-white hover:text-orange-500"
+          class="sty_logo self-center text-2xl font-semibold whitespace-nowrap text-white"
           >Gavyn Miles</span
         >
       </a>
       <div class="hidden w-full md:block md:w-auto">
         <ul
-          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-black "
+          class=" flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse mt-0 border-0  "
         >
           <li v-for="(item, index) in menubar" :key="index">
             <a
               v-if="index == 4"
               @click="fn_getName"
               href="/"
-              class="topic_text_TH block z-1 py-1.5 px-4 text-white bg-orange-500 rounded md:text-white hover:text-white hover:bg-transparent"
+              class="topic_text_TH block z-1 py-1.5 px-4 text-white rounded md:text-white hover:text-white hover:bg-transparent"
               style="border: 2px solid #fff;"
               aria-current="page"
               >{{ item.name }}</a
@@ -77,19 +77,33 @@ export default {
 </script>
 
 <style scoped>
+.sty_logo{
+  font-family: 'Lemon', serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.sty_logo:hover{
+  background: -webkit-repeating-linear-gradient(#a993fe, #7e61e7);
+  /* #f97316 #a993fe #7e61e7 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .topic_text_TH {
   font-weight: 500;
-  font-size: 23px;
+  font-size: 1.37rem;
+  display: flex;
+  justify-content: center;
 }
 .nav_item{
   cursor: pointer;
   position: relative;
+  text-decoration: none;
 }
 .nav_item::before {
   content: " ";
   width: 2rem;
   height: 0.2rem;
-  background: linear-gradient(90deg, #a993fe 0%, #f97316 100%);
+  background: linear-gradient(90deg, #a993fe 0%, #7e61e7 100%);
   border-radius: 0.5rem;
   position: absolute;
   bottom: -0.6rem;

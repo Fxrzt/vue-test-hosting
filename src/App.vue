@@ -1,8 +1,22 @@
 <template>
   <div id="app">
+    <NavbarMenu></NavbarMenu>
     <router-view/>
+    <CopyRight></CopyRight>
   </div>
 </template>
+
+<script>
+import NavbarMenu from './components/NavbarMenu.vue'
+import CopyRight from './components/CopyRight.vue'
+
+export default {
+  components: {
+    NavbarMenu,
+    CopyRight
+  }
+}
+</script>
 
 <style>
 #app {
@@ -27,11 +41,6 @@ nav a.router-link-exact-active {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
-.sty_logo{
-  font-family: 'Lemon', serif;
-  font-size: 30px;
-  font-weight: 500;
-}
 .describ_text_EN{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }

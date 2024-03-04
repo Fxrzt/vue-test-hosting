@@ -1,28 +1,29 @@
 <template>
   <div class="home">
-    <NavbarMenu></NavbarMenu>
-    <div class="grid grid-cols-4 gap-4 py-2">
-      <img src="../img/Beagle Puppies.jpg" class="w-20 h-30">
-      <img :src="ImageBeaglePuppy" class="w-20 h-30">
-      <img :src="ImageBeaglePuppy" class="w-20 h-30">
-      <img :src="ImageBeaglePuppy" class="w-20 h-30">
-    </div>
+    <h3>Home View</h3>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import NavbarMenu from '../components/NavbarMenu.vue'
 
 export default {
   name: 'HomeView',
   data () {
     return {
-      ImageBeaglePuppy: process.env.IMAGE_BEAGLE_PUPPY
+      // ImageBeaglePuppy: process.env.IMAGE_BEAGLE_PUPPY,
+      url_image: [
+      ]
     }
   },
   components: {
-    NavbarMenu
+  },
+  methods: {
+    fn_getConsoleLog () {
+      this.url_image.forEach(data => {
+        console.log(data.image_name, data.image_path)
+      })
+    }
   }
 }
 </script>
